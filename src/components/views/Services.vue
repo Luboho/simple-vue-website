@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1 class="text-bg text-3xl p-6 text-lime-700">Služby spoločnosti Flores</h1>
+  <h1 class="text-3xl p-6 text-lime-700">Služby spoločnosti Flores</h1>
       <Articles :articles="filteredArticles" />
     
 </div>

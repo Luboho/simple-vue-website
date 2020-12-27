@@ -167,21 +167,19 @@ export default {
       });
 
     window.onload = () => {
-      if (window.innerWidth < 767){
+      if (window.innerWidth < 768){
         this.dropDown = true;
       } else {
         this.dropDown = false;
       }
-    }
-  },
-  mounted() {
+    };
     window.onresize = () => {
-      if (window.innerWidth < 767){
+      if (window.innerWidth < 768){
         this.dropDown = true;
       } else {
         this.dropDown = false;
       }
-    }
+    };
   },
   methods: {
     navigate(newView, title) {

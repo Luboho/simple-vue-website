@@ -10,15 +10,17 @@ module.exports = {
         '96': '24rem',
       },
       screens: {
-        'sm' : '250px',
-        'md' : '768px',
+        
       },
       colors: {
         green: {
           'menu-green': '#00cc00',
         },
         lime: colors.lime,
-      }
+      },
+      fontSize: {
+        'xs': '.70rem',
+       }
     },
   },
   variants: {

@@ -4,7 +4,7 @@
       <!-- Header -->
       <h1 class="text-bg text-3xl p-2 text-center text-white"> Rodinná firma Flores sa venuje úprave záhrad, dvorov, okolia domov a mnoho ďalším záhradkárskym činnostiam.</h1> 
     </div>
-    <!-- Horizontal Gallery -->
+    <!-- Slider Horizontal Gallery -->
     <div class=" mt-5 shadow-xl">
         <div>
           <vue-flux
@@ -31,7 +31,7 @@
             </template>
 
           </vue-flux>
-<!-- End of Horizontal Gallery -->
+<!-- End of Slider Horizontal Gallery -->
       </div>
     </div>
 
@@ -64,9 +64,9 @@
          autoplay: true
       },
       vfImages: [ 
-        require('@/assets/pics/photo1.jpeg'),
-        require('@/assets/pics/photo2.jpeg'),
-        require('@/assets/pics/photo3.jpeg')
+        require('@/assets/slider-pics/photo1.jpeg'),
+        require('@/assets/slider-pics/photo2.jpeg'),
+        require('@/assets/slider-pics/photo3.jpeg')
       ],
       vfTransitions: [ 'slide' ],
       vfCaptions: [
