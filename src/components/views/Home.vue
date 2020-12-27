@@ -35,12 +35,12 @@
       </div>
     </div>
 
-<!-- Articles -->
+<!-- Posts -->
 <div class="text-bg">
-  <Articles :articles="filteredArticles" />
+  <Posts :posts="filteredPosts" />
 
 </div>
-<!-- End of Articles -->
+<!-- End of Posts -->
 
   </div>
 </template>
@@ -53,8 +53,8 @@
    FluxIndex,
    FluxPagination,
   } from 'vue-flux';
-  import articles from '../../data/articles';
-  import Articles from '../Articles';
+  import posts from '../../data/posts';
+  import Posts from '../Posts';
 
   export default {
     name: "Home",
@@ -77,9 +77,9 @@
    }),
 
    computed: {
-      filteredArticles() {
-          return articles.filter(function(article) {
-            return (article.writtenFor == 'home');
+      filteredPosts() {
+          return posts.filter(function(post) {
+            return (post.writtenFor == 'home');
         });
       },
     },
@@ -90,7 +90,7 @@
       FluxControls,
       FluxIndex,
       FluxPagination,
-      Articles
+      Posts
    },
   }
 </script>

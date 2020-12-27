@@ -1,28 +1,28 @@
 <template>
 <div>
   <h1 class="text-3xl p-6 text-lime-700">Služby spoločnosti Flores</h1>
-      <Articles :articles="filteredArticles" />
+      <Posts :posts="filteredPosts" />
     
 </div>
 </template>
 
 <script>
-  import articles from '../../data/articles';
-  import Articles from '../Articles';
+  import posts from '../../data/posts';
+  import Posts from '../Posts';
   
   export default {
     name: "Services",
 
     computed: {
-      filteredArticles() {
-          return articles.filter(function(article) {
-            return (article.writtenFor == 'services');
+      filteredPosts() {
+          return posts.filter(function(post) {
+            return (post.writtenFor == 'services');
         });
       },
     },
 
     components: {
-      Articles
+      Posts
     }
   }
 </script>

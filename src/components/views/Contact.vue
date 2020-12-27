@@ -39,13 +39,12 @@
                         <p>Pevná linka:</p> 
                         <p>Mobil: </p>
                         <p>Email: </p>
-                        <p>Facebook: </p>
                     </div>
                     <div>
                         <p class="whitespace-nowrap text-right  ml-2"> 02/231 34 45</p>
                         <p class="whitespace-nowrap text-right  ml-2"> +421 903 125 678</p>
                         <p class="whitespace-nowrap text-right  ml-2"> flores@gmail.com</p>
-                        <p class="ml-12">
+                        <p class="ml-12 mt-5">
                             <ShareNetwork
                                 network="facebook"
                                 url=""
