@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSocialSharing from 'vue-social-sharing'
+import VueLazyLoad from 'vue-lazyload'
 
 // use library
 library.add(fas)
@@ -15,7 +16,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueSocialSharing);
 
-
+Vue.use(VueLazyLoad)
 
 new Vue({
   render: h => h(App),

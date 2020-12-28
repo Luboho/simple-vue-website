@@ -10,7 +10,7 @@ module.exports = {
         '96': '24rem',
       },
       screens: {
-        
+        'xs': '200px'
       },
       colors: {
         green: {
