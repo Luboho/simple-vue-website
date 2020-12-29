@@ -1,183 +1,265 @@
 export const media = [
     
     { // For image
+      id: 1,
+      category: 'cleaners',
       thumb: require('@/assets/rental/cleaner-1.jpg'),
       src: require('@/assets/rental/cleaner-1.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 2,
+      category: 'cleaners',
       thumb: require('@/assets/rental/cleaner-2.jpg'),
       src: require('@/assets/rental/cleaner-2.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 3,
+      category: 'cleaners',
       thumb: require('@/assets/rental/cleaner-3.jpg'),
       src: require('@/assets/rental/cleaner-3.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 4,
+      category: 'cleaners',
       thumb: require('@/assets/rental/cleaner-4.jpg'),
       src: require('@/assets/rental/cleaner-4.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 5,
+      category: 'cleaners',
       thumb: require('@/assets/rental/cleaner-5.jpg'),
       src: require('@/assets/rental/cleaner-5.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 6,
+      category: 'cutters',
       thumb: require('@/assets/rental/grass-cutter-1.jpg'),
       src: require('@/assets/rental/grass-cutter-1.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 7,
+      category: 'cutters',
       thumb: require('@/assets/rental/grass-cutter-2.jpg'),
       src: require('@/assets/rental/grass-cutter-2.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 8,
+      category: 'cutters',
       thumb: require('@/assets/rental/grass-cutter-3.jpg'),
       src: require('@/assets/rental/grass-cutter-3.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 9,
+      category: 'cutters',
       thumb: require('@/assets/rental/grass-cutter-4.jpg'),
       src: require('@/assets/rental/grass-cutter-4.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 10,
+      category: 'cutters',
       thumb: require('@/assets/rental/grass-cutter-5.jpg'),
       src: require('@/assets/rental/grass-cutter-5.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 11,
+      category: 'chainsaw',
       thumb: require('@/assets/rental/chainsaw-1.jpg'),
       src: require('@/assets/rental/chainsaw-1.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 12,
+      category: 'chainsaw',
       thumb: require('@/assets/rental/chainsaw-2.jpg'),
       src: require('@/assets/rental/chainsaw-2.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 13,
+      category: 'chainsaw',
       thumb: require('@/assets/rental/chainsaw-3.jpg'),
       src: require('@/assets/rental/chainsaw-3.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 14,
+      category: 'chainsaw',
       thumb: require('@/assets/rental/chainsaw-4.jpg'),
       src: require('@/assets/rental/chainsaw-4.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 15,
+      category: 'chainsaw',
       thumb: require('@/assets/rental/chainsaw-5.jpeg'),
       src: require('@/assets/rental/chainsaw-5.jpeg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 16,
+      category: 'chainsaw',
       thumb: require('@/assets/rental/chainsaw-6.jpg'),
       src: require('@/assets/rental/chainsaw-6.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 17,
+      category: 'scaffold',
       thumb: require('@/assets/rental/scaffold-1.jpg'),
       src: require('@/assets/rental/scaffold-1.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 18,
+      category: 'scaffold',
       thumb: require('@/assets/rental/scaffold-2.jpg'),
       src: require('@/assets/rental/scaffold-2.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 19,
+      category: 'scaffold',
       thumb: require('@/assets/rental/scaffold-3.jpg'),
       src: require('@/assets/rental/scaffold-3.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
+    
     { // For image
-      thumb: require('@/assets/rental/scaffold-4.jpg'),
-      src: require('@/assets/rental/scaffold-4.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
-    //   srcset: '...' // Optional for displaying responsive images
-    },
-    { // For image
+      id: 21,
+      category: 'scaffold',
       thumb: require('@/assets/rental/scaffold-5.jpg'),
       src: require('@/assets/rental/scaffold-5.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 22,
+      category: 'scaffold',
       thumb: require('@/assets/rental/scaffold-6.jpg'),
       src: require('@/assets/rental/scaffold-6.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 23,
+      category: 'scaffold',
       thumb: require('@/assets/rental/scaffold-7.jpg'),
       src: require('@/assets/rental/scaffold-7.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 24,
+      category: 'scaffold',
       thumb: require('@/assets/rental/scaffold-8.jpg'),
       src: require('@/assets/rental/scaffold-8.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 25,
+      category: 'tools',
       thumb: require('@/assets/rental/tools-1.jpg'),
       src: require('@/assets/rental/tools-1.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 26,
+      category: 'tools',
       thumb: require('@/assets/rental/tools-2.jpg'),
       src: require('@/assets/rental/tools-2.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 27,
+      category: 'tools',
       thumb: require('@/assets/rental/tools-3.jpg'),
       src: require('@/assets/rental/tools-3.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 28,
+      category: 'tools',
       thumb: require('@/assets/rental/tools-4.jpg'),
       src: require('@/assets/rental/tools-4.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 29,
+      category: 'tools',
       thumb: require('@/assets/rental/tools-5.jpg'),
       src: require('@/assets/rental/tools-5.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     { // For image
+      id: 30,
+      category: 'tools',
       thumb: require('@/assets/rental/tools-6.jpg'),
       src: require('@/assets/rental/tools-6.jpg'),
-      caption: 'caption to display. receive <html> <b>tag</b>', // Optional
+      title: 'Lorem Ipsum Dolor',
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
     

@@ -6,6 +6,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSocialSharing from 'vue-social-sharing'
 import VueLazyLoad from 'vue-lazyload'
+import {VueMasonryPlugin} from 'vue-masonry';
 
 // use library
 library.add(fas)
@@ -17,6 +18,9 @@ Vue.config.productionTip = false
 Vue.use(VueSocialSharing);
 
 Vue.use(VueLazyLoad)
+
+Vue.use(VueMasonryPlugin)
+
 
 new Vue({
   render: h => h(App),

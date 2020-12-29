@@ -2,7 +2,7 @@
   <div class="">
     <div class="header shadow-xl p-8">
       <!-- Header -->
-      <h1 class="text-bg text-3xl p-2 text-center text-white"> Rodinná firma Flores sa venuje úprave záhrad, dvorov, okolia domov a mnoho ďalším záhradkárskym činnostiam.</h1> 
+      <h1 class="text-bg text-2xl p-2 text-center text-white"> Rodinná firma Flores sa venuje úprave záhrad, dvorov, okolia domov a mnoho ďalším záhradkárskym činnostiam.</h1> 
     </div>
     <!-- Slider Horizontal Gallery -->
     <div class=" mt-5 shadow-xl">
