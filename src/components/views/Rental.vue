@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="masonry-wrapper-height bg-white">
 <!-- LightBox Image Preview -->
       <!-- <p>{{ paragraphs[0] }}</p>
       <p>{{ paragraphs[1] }}</p> -->
@@ -23,28 +23,32 @@
 <!-- End of LightBox Image -->
 
 <!-- Category filter -->
-      <form class="flex justify-evenly text-white p-4 text-lg bg-gray-600 w-screen">
-        <label for="cleaners">Čističe
-          <input @click="filterOut" name="filter" id="cleaners" type="radio" class="px-3">
-        </label>
-        <label for="cutters">Kosačky
-          <input @click="filterOut" name="filter" id="cutters" type="radio" class="px-3">
-        </label>
-        <label for="scaffolds">Rebríky a lešenia
-          <input @click="filterOut" name="filter" id="scaffolds" type="radio" class="px-3">
-        </label>
-        <label for="chainsaws">Motorové píly
-          <input @click="filterOut" name="filter" id="chainsaws" type="radio" class="px-3">
-        </label>
-        <label for="tools">Ručné náradie
-          <input @click="filterOut" name="filter" id="tools" type="radio" class="px-3">
-        </label>
+  <div class=" text-gray-300 p-2 bg-gray-600 w-screen">
+    <h3 @click="cancelFilter" class="filter-button text-gray-200 p-2">
+        <font-awesome-icon class="text-2xl align-bottom" :icon="['fas', 'filter']" ></font-awesome-icon>
+        Filtrovať
+    </h3> 
+      <form class="flex justify-evenly">
+        <div v-for="(category, index) in categories" :key="index" class="flex items-center mr-4 mb-4">
+          <input :id="category" 
+                 v-model="selectedCategory"
+                 :value="category" 
+                 name="filter" 
+                 class="hidden" 
+                 type="radio"/>
+          <label :for="category" class="flex items-center cursor-pointer">
+            <span class="w-4 h-4 inline-block mr-1.5 border rounded-full border-grey"></span>
+            <h3 class="whitespace-nowrap">{{ category }}</h3> 
+          </label>
+        </div>
+        
       </form>
+  </div>
 <!-- End of Category filter -->
 
 <!-- Masonry Gallery used for "brick wall" layout -->
- <div class="masonry"  v-lazy="media.src">
-        <div v-for="(post, index) in media" :key="index" class="card" >
+        <div  v-if="filterMediaByCategory.length > 0" class="masonry"  v-lazy="filterMediaByCategory.src">
+        <div v-for="(post, index) in filterMediaByCategory" :key="index" class="card" >
             <div class="card-content animate"  v-lazy="post.url || post.thumb" @click="openGallery(index)">
                 <div v-if="post != ''">
                     <img :src="post.src" class="card-img" @load="rendered">
@@ -58,6 +62,25 @@
             </div>
         </div>
     </div>
+
+    <div v-else class="masonry"  v-lazy="filterMediaByCategory.src">
+        <div v-for="(post, index) in filterMediaByCategory" :key="index" class="card" >
+            <div class="card-content animate"  v-lazy="post.url || post.thumb" @click="openGallery(index)">
+                <div v-if="post != ''">
+                    <img :src="post.src" class="card-img" @load="rendered">
+                </div>
+                <div  class="card-caption">
+                  <h1 class="font-bold text-sm">{{ post.title }}</h1>
+                  <h3>{{ post.caption }}</h3>
+                    <!-- <a v-for="post.category in post.categories" :key="post.id" :href="'/blog?category=' + category.slug">{{ category.title }} <br></a> -->
+                    <!-- <p class="font-12">Posted on {{ post.published_at }}</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 <!-- End of Masonry Gallery -->
   </div>
 </template>
@@ -72,8 +95,11 @@
     data: () => ({
       media,
       paragraphs,
+      selectedCategory: '',
+      categories: [],
       imageCounter: 0,
-      imagesCount: 0
+      imagesCount: 0,
+      
     }),
 
     components: {
@@ -82,19 +108,19 @@
 
     created () {
         this.calculateImageCount();
-        let masonryEvents = ['load', 'resize'];
+        let masonryEvents = ['load', 'resize', 'cancelEvent'];
         let vm = this
             masonryEvents.forEach(function (event) {
                  window.addEventListener(event, vm.resizeAllMasonryItems);
             });
+      // Filter Existing Categories
+      this.filterCategories();
     },
-
+    
     computed: {
-      filteredMedia() {
-        return this.media.filter(function(post) {
-          return post.category == 'chaihnsaw';
-        });
-      } 
+      filterMediaByCategory() {
+        return this.media.filter(post => !post.category.indexOf(this.selectedCategory));
+      },
     },
 
     methods: {
@@ -102,8 +128,26 @@
           this.$refs.lightbox.showImage(index)
       },
 
-      filterOut() {
+      filterCategories() {
+        let allObjCategories = [];
 
+        this.media.forEach(function(post) {
+          allObjCategories.push(post.category);
+        });
+         this.categories = allObjCategories.filter((category, index) => allObjCategories.indexOf(category) === index);
+      },
+ 
+      filterOut(e) {
+        return e.target.id;
+      },
+
+      cancelFilter() {
+        if (this.selectedCategory !== ''){
+          this.selectedCategory = '';
+
+          
+          this.$forceUpdate();
+        } 
       },
         // Get posts from axios backend
       //     getPosts () {
@@ -167,7 +211,7 @@
     watch: {
       imagesCount: function () {
         if(this.imagesCount == this.imageCounter){
-              this.resizeAllMasonryItems()
+              this.resizeAllMasonryItems();
           } 
       },
     },
@@ -221,6 +265,25 @@
   100% {
     transform: scale(1.0);
   }
+}
+
+input[type="radio"] + label span {
+    transition:  .2s,
+      transform .2s;
+}
+
+input[type="radio"] + label span:hover,
+input[type="radio"] + label:hover span{
+  transform: scale(1.2);
+} 
+
+input[type="radio"]:checked + label span {
+  background-color: #1F9D55; 
+  box-shadow: 0px 0px 0px 2px white inset;
+}
+
+input[type="radio"]:checked + label{
+   color: #1F9D55; 
 }
 
 </style>
