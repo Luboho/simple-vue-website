@@ -1,14 +1,14 @@
 <template>
-    <div class="text-gray-200 w-full pt-20 sm:pb-20 md:pb-48 lg:pb-48 contact-bg">
-        <div class="sm:grid sm:grid-cols-1 sm:justify-items-center md:flex lg:flex justify-between">
-            <div class="p-10 mt-10 bg-gray-400 bg-opacity-50">
+    <div class="text-gray-200 w-full pt-20 xs:pb-20  md:pb-48 lg:pb-48 contact-bg">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-2 xs:justify-items-center">
+            <div class="p-10 mt-10 bg-gray-700 bg-opacity-50">
                 <h1 class="font-bold">Flores s.r.o.</h1>
                 <p class="whitespace-nowrap">Ulica P.J.Šafárika 143/34</p>
                 <p class="whitespace-nowrap">Banská Bystrica</p>
                 <p class="whitespace-nowrap">457 87</p>     
             </div>
   
-            <div class="p-10 mt-10 bg-gray-400 bg-opacity-50">
+            <div class="p-10 mt-10 bg-gray-700 bg-opacity-50">
                 <h2 class="font-bold">Otváracie hodiny:</h2>
                 <div class="flex">
                     <div class="">
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <div class="p-10 mt-10 bg-gray-400 bg-opacity-50">
+            <div class="p-10 mt-10 bg-gray-700 bg-opacity-50">
                 <h2 class="font-bold">Kontaktné údaje:</h2>
                 <div class="flex">
                     <div class="">
@@ -76,18 +76,10 @@ export default {
 </script>
 
 <style>
-    @media screen and (max-width: 600px) {
+
         .contact-bg {
-            background-image: url('~@/assets/pics/contact-bg-sm.jpeg');
-            background-repeat: no-repeat;
-            
+            background-image: url('~@/assets/pics/contact-bg.jpg');
+            background-repeat: repeat-x;
         }
-    }
-    @media screen and (min-width: 601px) {
-        .contact-bg {
-            background-image: url('~@/assets/pics/contact-bg-not-sm.jpeg');
-            background-repeat: no-repeat;
-            
-        }
-    }
+
 </style>

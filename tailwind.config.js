@@ -17,6 +17,7 @@ module.exports = {
           'menu-green': '#00cc00',
         },
         lime: colors.lime,
+        amber: colors.amber
       },
       fontSize: {
         'xs': '.70rem',

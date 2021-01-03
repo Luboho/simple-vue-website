@@ -5,7 +5,7 @@
       <h1 class="text-bg text-2xl p-2 text-center text-white"> Rodinná firma Flores sa venuje úprave záhrad, dvorov, okolia domov a mnoho ďalším záhradkárskym činnostiam.</h1> 
     </div>
     <!-- Slider Horizontal Gallery -->
-    <div class=" mt-5 shadow-xl">
+    <div class=" shadow-xl">
         <div>
           <vue-flux
             :options="vfOptions"

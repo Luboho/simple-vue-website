@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSocialSharing from 'vue-social-sharing'
 import VueLazyLoad from 'vue-lazyload'
 import {VueMasonryPlugin} from 'vue-masonry';
-
 // use library
 library.add(fas)
 // Reg. component

@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-lg bg-image shadow-inner overflow-y-scroll z-5">
+  <div class="container max-w-screen-lg bg-amber-200 shadow-inner overflow-y-scroll z-5">
       <keep-alive>
             <component :is="currentView.tag" :data="currentView.data"></component>
       </keep-alive>
@@ -61,9 +61,5 @@
 </script>
 
 <style>
-    .bg-image {
-        background-image: url('~@/assets/pics/flores-bg.png');
-        background-repeat: no-repeat;
-        background-color: tan;
-    }
+    
 </style>

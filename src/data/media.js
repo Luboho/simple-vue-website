@@ -6,6 +6,7 @@ export const media = [
       thumb: require('@/assets/rental/cleaner-1.jpg'),
       src: require('@/assets/rental/cleaner-1.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -15,6 +16,7 @@ export const media = [
       thumb: require('@/assets/rental/cleaner-2.jpg'),
       src: require('@/assets/rental/cleaner-2.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -24,6 +26,7 @@ export const media = [
       thumb: require('@/assets/rental/cleaner-3.jpg'),
       src: require('@/assets/rental/cleaner-3.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -33,6 +36,7 @@ export const media = [
       thumb: require('@/assets/rental/cleaner-4.jpg'),
       src: require('@/assets/rental/cleaner-4.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -42,6 +46,7 @@ export const media = [
       thumb: require('@/assets/rental/cleaner-5.jpg'),
       src: require('@/assets/rental/cleaner-5.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -51,6 +56,7 @@ export const media = [
       thumb: require('@/assets/rental/grass-cutter-1.jpg'),
       src: require('@/assets/rental/grass-cutter-1.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -60,6 +66,7 @@ export const media = [
       thumb: require('@/assets/rental/grass-cutter-2.jpg'),
       src: require('@/assets/rental/grass-cutter-2.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -69,6 +76,7 @@ export const media = [
       thumb: require('@/assets/rental/grass-cutter-3.jpg'),
       src: require('@/assets/rental/grass-cutter-3.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -78,6 +86,7 @@ export const media = [
       thumb: require('@/assets/rental/grass-cutter-4.jpg'),
       src: require('@/assets/rental/grass-cutter-4.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -87,6 +96,7 @@ export const media = [
       thumb: require('@/assets/rental/grass-cutter-5.jpg'),
       src: require('@/assets/rental/grass-cutter-5.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -96,6 +106,7 @@ export const media = [
       thumb: require('@/assets/rental/chainsaw-1.jpg'),
       src: require('@/assets/rental/chainsaw-1.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -105,6 +116,7 @@ export const media = [
       thumb: require('@/assets/rental/chainsaw-2.jpg'),
       src: require('@/assets/rental/chainsaw-2.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -114,6 +126,7 @@ export const media = [
       thumb: require('@/assets/rental/chainsaw-3.jpg'),
       src: require('@/assets/rental/chainsaw-3.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -123,6 +136,7 @@ export const media = [
       thumb: require('@/assets/rental/chainsaw-4.jpg'),
       src: require('@/assets/rental/chainsaw-4.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -132,6 +146,7 @@ export const media = [
       thumb: require('@/assets/rental/chainsaw-5.jpeg'),
       src: require('@/assets/rental/chainsaw-5.jpeg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -141,6 +156,7 @@ export const media = [
       thumb: require('@/assets/rental/chainsaw-6.jpg'),
       src: require('@/assets/rental/chainsaw-6.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -150,6 +166,7 @@ export const media = [
       thumb: require('@/assets/rental/scaffold-1.jpg'),
       src: require('@/assets/rental/scaffold-1.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -159,6 +176,7 @@ export const media = [
       thumb: require('@/assets/rental/scaffold-2.jpg'),
       src: require('@/assets/rental/scaffold-2.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -168,6 +186,7 @@ export const media = [
       thumb: require('@/assets/rental/scaffold-3.jpg'),
       src: require('@/assets/rental/scaffold-3.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -177,6 +196,7 @@ export const media = [
       thumb: require('@/assets/rental/scaffold-5.jpg'),
       src: require('@/assets/rental/scaffold-5.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -186,6 +206,7 @@ export const media = [
       thumb: require('@/assets/rental/scaffold-6.jpg'),
       src: require('@/assets/rental/scaffold-6.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -195,6 +216,7 @@ export const media = [
       thumb: require('@/assets/rental/scaffold-7.jpg'),
       src: require('@/assets/rental/scaffold-7.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -204,6 +226,7 @@ export const media = [
       thumb: require('@/assets/rental/scaffold-8.jpg'),
       src: require('@/assets/rental/scaffold-8.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -213,6 +236,7 @@ export const media = [
       thumb: require('@/assets/rental/tools-1.jpg'),
       src: require('@/assets/rental/tools-1.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -222,6 +246,7 @@ export const media = [
       thumb: require('@/assets/rental/tools-2.jpg'),
       src: require('@/assets/rental/tools-2.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -231,6 +256,7 @@ export const media = [
       thumb: require('@/assets/rental/tools-3.jpg'),
       src: require('@/assets/rental/tools-3.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -240,6 +266,7 @@ export const media = [
       thumb: require('@/assets/rental/tools-4.jpg'),
       src: require('@/assets/rental/tools-4.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -249,6 +276,7 @@ export const media = [
       thumb: require('@/assets/rental/tools-5.jpg'),
       src: require('@/assets/rental/tools-5.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
@@ -258,6 +286,7 @@ export const media = [
       thumb: require('@/assets/rental/tools-6.jpg'),
       src: require('@/assets/rental/tools-6.jpg'),
       title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
