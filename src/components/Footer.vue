@@ -65,7 +65,7 @@
             </div>
 
         </div>
-    <p class="p-3 top text-xs text-gray-300 text-center"> © 2020. Vytvorené pre Floral s.r.o. . Všetky práva vyhradené. Luboho web design. </p>
+    <p class="p-3 top text-xs text-gray-300 text-center"> © 2020-2021. Floral s.r.o. Všetky práva vyhradené. </p>
 
   </div>
 </template>

@@ -26,7 +26,7 @@
             </template> -->
 
             <template v-slot:caption>
-                <flux-caption style="background-color:rgba(65, 64, 64, 0.7);padding-top: 70px;height:200px;width:100%;font-size:1.4em;line-height: 150%;"  />
+                <flux-caption style="background-color:rgba(65, 64, 64, 0.7);padding-top: 60px;height:200px;width:100%;font-size:1.3em;line-height: 150%;"  />
             </template>
 
           </vue-flux>

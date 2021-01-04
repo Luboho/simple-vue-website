@@ -1,5 +1,5 @@
 <template>
-<div class="masonry-wrapper-height bg-white">
+<div class="masonry-wrapper-height">
 <!-- LightBox Image Preview -->
       <!-- <p>{{ paragraphs[0] }}</p>
       <p>{{ paragraphs[1] }}</p> -->
@@ -61,8 +61,8 @@
                   <h3>{{ post.caption }}</h3>
                     <!-- <p class="font-12">Posted on {{ post.published_at }}</p> -->
                 </div>
-                <div class="flex justify-between">
-                    <p class="text-sm right-0 text-lime-600"># {{ post.category }}</p>
+                <div class="flex bg-gray-200 justify-between">
+                    <p class="text-sm ml-2 text-lime-600"># {{ post.category }}</p>
                     <p class="text-gray-700 text-sm mr-2">{{ post.price}}</p>
                 </div>
             </div>
@@ -217,7 +217,7 @@ export default {
     }
     .card-content {
       background-color: whitesmoke;
-      box-shadow: 5px 10px 8px #8a8a8a;
+      box-shadow: 5px 10px 8px #181717;
       border-radius: 2px;
       cursor: pointer;
     }

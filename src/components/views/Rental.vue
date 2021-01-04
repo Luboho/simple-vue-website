@@ -1,5 +1,5 @@
 <template>
-  <div class="masonry-wrapper-height bg-white">
+  <div class="masonry-wrapper-height">
 <!-- LightBox Image Preview -->
       <!-- <p>{{ paragraphs[0] }}</p>
       <p>{{ paragraphs[1] }}</p> -->
