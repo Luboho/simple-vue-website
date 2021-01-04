@@ -38,7 +38,7 @@
                  name="filter" 
                  class="hidden" 
                  type="radio"/>
-          <label  @click="recalculateMasonry" :for="category" class="flex flex-col md:flex-row items-center cursor-pointer">
+          <label  @click="resetCounters" :for="category" class="flex flex-col md:flex-row items-center cursor-pointer">
             <span class="w-4 h-4 inline-block mr-1.5 border rounded-full border-grey"></span>
             <h3 class="whitespace-nowrap">{{ category }}</h3> 
           </label>
@@ -84,7 +84,6 @@ export default {
       categories: [],
       imageCounter: 0,
       imagesCount: 0,
-      
     }),
 
   components: {
@@ -93,7 +92,7 @@ export default {
 
     created () {
         this.calculateImageCount();
-        let masonryEvents = ['load', 'resize'];
+        let masonryEvents = ['load', 'resize', 'change'];
         let vm = this
             masonryEvents.forEach(function (event) {
                  window.addEventListener(event, vm.resizeAllMasonryItems);
@@ -122,14 +121,10 @@ export default {
          this.categories = allObjCategories.filter((category, index) => allObjCategories.indexOf(category) === index);
       },
 
-      recalculateMasonry() {
-        if (this.filterMediaByCategory.length < this.media.length){
-          this.selectedCategory = '';
+      resetCounters() {
             // Refresh Variable for watcher
-            this.imagesCount = 0;
             this.imageCounter = 0;
-            this.calculateImageCount();
-        } 
+            this.imagesCount = 0;
       },
  
       cancelFilter() {
@@ -138,7 +133,6 @@ export default {
             // Refresh Variable for watcher
             this.imagesCount = 0;
             this.imageCounter = 0;
-            this.calculateImageCount();
         } 
       },
         // Get posts from axios backend
@@ -155,14 +149,12 @@ export default {
       //     }
       calculateImageCount () {
           for (let i = 0; i < this.filterMediaByCategory.length; i++) {
-              if (this.filterMediaByCategory[i].src != '') {
                   this.imageCounter++;
-              } 
           }
       },
       rendered () {
-        // Img onload
-        this.imagesCount++
+          // Img onload
+          this.imagesCount++
       },
 
       resizeAllMasonryItems () {
@@ -206,7 +198,10 @@ export default {
         if(this.imagesCount == this.imageCounter){
               this.resizeAllMasonryItems();
           } 
-      }
+      },
+      filterMediaByCategory: function() {
+        this.imageCounter = this.filterMediaByCategory.length;
+      },
   }
 }
 </script>

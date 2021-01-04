@@ -1,33 +1,32 @@
 <template>
   <div class="">
-    <div class="header shadow-xl p-8">
-      <!-- Header -->
-      <h1 class="text-bg text-2xl p-2 text-center text-white"> Rodinná firma Flores sa venuje úprave záhrad, dvorov, okolia domov a mnoho ďalším záhradkárskym činnostiam.</h1> 
-    </div>
+    <!-- Header -->
     <!-- Slider Horizontal Gallery -->
     <div class=" shadow-xl">
         <div>
+          
           <vue-flux
             :options="vfOptions"
             :images="vfImages"
             :transitions="vfTransitions"
             :captions="vfCaptions"
+            style="height:200px;width:100%;"
             ref="slider">
 
-            <template v-slot:controls>
+            <!-- <template v-slot:controls>
                 <flux-controls/>
-            </template>
+            </template> -->
 
-            <template v-slot:pagination>
+            <!-- <template v-slot:pagination>
                 <flux-pagination />
-            </template>
+            </template> -->
 
-            <template v-slot:index>
+            <!-- <template v-slot:index>
                 <flux-index />
-            </template>
+            </template> -->
 
             <template v-slot:caption>
-                <flux-caption />
+                <flux-caption style="background-color:rgba(65, 64, 64, 0.7);padding-top: 70px;height:200px;width:100%;font-size:1.4em;line-height: 150%;"  />
             </template>
 
           </vue-flux>
@@ -49,9 +48,9 @@
   import {
    VueFlux,
    FluxCaption,
-   FluxControls,
-   FluxIndex,
-   FluxPagination,
+  //  FluxControls,
+  //  FluxIndex,
+  //  FluxPagination,
   } from 'vue-flux';
   import posts from '../../data/posts';
   import Posts from '../Posts';
@@ -70,7 +69,7 @@
       ],
       vfTransitions: [ 'slide' ],
       vfCaptions: [
-         'Lorem Ipsum Dolor, Suspendisse auctor massa ut dolor pulvinar porttitor, Suspendisse auctor massa ut dolor pulvinar porttitor',
+         'Rodinná firma Flores sa venuje úprave záhrad, dvorov, okolia domov a mnoho ďalším záhradkárskym činnostiam.',
          'Suspendisse auctor massa ut dolor pulvinar porttitor, fringilla accumsan dolor, elementum convallis odio, fringilla accumsan dolor, elementum convallis odio',
          'Donec fringilla accumsan dolor, elementum convallis odio, fringilla accumsan dolor, elementum convallis odiofringilla accumsan dolor, elementum convallis odio',
       ],
@@ -87,9 +86,9 @@
     components: {
       VueFlux,
       FluxCaption,
-      FluxControls,
-      FluxIndex,
-      FluxPagination,
+      // FluxControls,
+      // FluxIndex,
+      // FluxPagination,
       Posts
    },
   }
@@ -98,6 +97,5 @@
 <style scoped>
   .header {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-image: url('https://images.pexels.com/photos/70069/pexels-photo-70069.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
   }
 </style>
