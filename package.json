@@ -16,6 +16,7 @@
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "autoprefixer": "^9.8.6",
     "core-js": "^3.6.5",
+    "jw-vue-pagination": "^1.0.3",
     "masonry-layout": "^4.2.2",
     "nuxt": "^2.14.12",
     "postcss": "^7.0.35",

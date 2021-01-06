@@ -65,7 +65,7 @@
             </div>
 
         </div>
-    <p class="p-3 top text-xs text-gray-300 text-center"> © 2020-2021. Floral s.r.o. Všetky práva vyhradené. </p>
+    <p class="p-3 top text-sm text-gray-300 text-center"> © 2020-2021. Floral s.r.o. Všetky práva vyhradené. </p>
 
   </div>
 </template>

@@ -48,11 +48,10 @@
   </div>
 <!-- End of Category filter -->
 
-
 <!-- Masonry Gallery used for "brick wall" layout -->
         <div  v-if="filterMediaByCategory.length > 0" class="masonry"  v-lazy="filterMediaByCategory.src">
         <div v-for="(post, index) in filterMediaByCategory" :key="index" class="card" >
-            <div class="card-content animate"  v-lazy="post.url || post.thumb" @click="openGallery(index)">
+            <div class="card-content animate" v-lazy="post.url || post.thumb" @click="openGallery(index)">
                 <div v-if="post != ''">
                     <img :src="post.src" class="card-img" @load="rendered">
                 </div>
@@ -73,137 +72,144 @@
 </template>
 
 <script>
-    import LightBox from 'vue-image-lightbox';
-export default {
-    name: "Masonry",
+  import LightBox from 'vue-image-lightbox';
 
-    props: ["media"],
+  export default {
+      name: "Masonry",
+      props: ["media"],
+      data: () => ({
+        selectedCategory: '',
+        categories: [],
+        imageCounter: 0,
+        imagesCount: 0,
+      }),
+      created () {
+          this.calculateImageCount();
 
-    data: () => ({
-      selectedCategory: '',
-      categories: [],
-      imageCounter: 0,
-      imagesCount: 0,
-    }),
-
-  components: {
-      LightBox,
-    },
-
-    created () {
-        this.calculateImageCount();
-        let masonryEvents = ['load', 'resize', 'change'];
-        let vm = this
-            masonryEvents.forEach(function (event) {
-                 window.addEventListener(event, vm.resizeAllMasonryItems);
-            });
-      // Filter Existing Categories
-      this.findCategories();
-    },
-    
-    computed: {
-      filterMediaByCategory() { 
-        return this.media.filter(post => !post.category.indexOf(this.selectedCategory));
+          let masonryEvents = ['load', 'resize', 'change'];
+          let vm = this
+              masonryEvents.forEach(function (event) {
+                  window.addEventListener(event, vm.resizeAllMasonryItems);
+              });
+        // Filter Existing Categories
+        this.findCategories();
       },
-    },
-
-    methods: {
-      openGallery(index) {
-          this.$refs.lightbox.showImage(index)
+      
+      computed: {
+        filterMediaByCategory() { 
+          return this.media.filter(post => !post.category.indexOf(this.selectedCategory));
+        },
       },
+      methods: {
+        openGallery(index) {
+            this.$refs.lightbox.showImage(index)
+        },
 
-      findCategories() {
-        let allObjCategories = [];
-
-        this.media.forEach(function(post) {
-          allObjCategories.push(post.category);
-        });
-         this.categories = allObjCategories.filter((category, index) => allObjCategories.indexOf(category) === index);
-      },
-
-      resetCounters() {
-            // Refresh Variable for watcher
-            this.imageCounter = 0;
-            this.imagesCount = 0;
-      },
- 
-      cancelFilter() {
-        if (this.selectedCategory !== ''){
-          this.selectedCategory = '';
-            // Refresh Variable for watcher
-            this.imagesCount = 0;
-            this.imageCounter = 0;
-        } 
-      },
-        // Get posts from axios backend
-      //     getPosts () {
-      //         let params = {}
-      //         if(this.category != '') {
-      //             params.category = this.category
-      //         }
-      //         window.axios.get('/api/posts', {params})
-      //             .then(response => {
-      //                 this.posts = response.data.data
-      //                 this.calculateImageCount()
-      //             })
-      //     }
-      calculateImageCount () {
-          for (let i = 0; i < this.filterMediaByCategory.length; i++) {
-                  this.imageCounter++;
+        addRemainingImagesCount() {
+          let firstCategory = this.categories[0];
+          if(this.selectedCategory == firstCategory) {
+            this.imagesCount += this.filterMediaByCategory.length;
           }
-      },
-      rendered () {
-          // Img onload
-          this.imagesCount++
-      },
+        },
 
-      resizeAllMasonryItems () {
-          // Get all item class objects in one list
-          let allItems = document.getElementsByClassName('card');
+        findCategories() {
+          let allObjCategories = [];
 
-          /*
-          * Loop through the above list and execute the spanning function to
-          * each list-item (i.e. each masonry item)
-          */
-          for (let i = 0; i < allItems.length; i++) {
-              this.resizeMasonryItem(allItems[i]);
-          }
-      }, 
+          this.media.forEach(function(post) {
+            allObjCategories.push(post.category);
+          });
+          this.categories = allObjCategories.filter((category, index) => allObjCategories.indexOf(category) === index);
+        },
 
-      resizeMasonryItem (item) {
-          /* Get the grid object, its row-gap, and the size of its implicit rows */
-          let grid = document.getElementsByClassName('masonry')[0],
-              rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap')),
-              rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-
-          /*
-          * Spanning for any brick = S
-          * Grid's row-gap = G
-          * Size of grid's implicitly create row-track = R
-          * Height of item content = H
-          * Net height of the item = H1 = H + G
-          * Net height of the implicit row-track = T = G + R
-          * S = H1 / T
-          */
-
-          let rowSpan = Math.ceil((item.querySelector('.card-content').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
-
-          /* Set the spanning as calculated above (S) */
-          item.style.gridRowEnd = 'span ' + rowSpan;
-      },
-    },
-
-    watch: {
-      imagesCount: function () {
-        if(this.imagesCount == this.imageCounter){
-              this.resizeAllMasonryItems();
+        resetCounters() {
+              // Refresh Variable for watcher
+              this.imageCounter = 0;
+              this.imagesCount = 0;
+        },
+  
+        cancelFilter() {
+          if (this.selectedCategory !== ''){
+            this.resetCounters();
+            this.addRemainingImagesCount();
+            // let recentFiltratedImages = this.filterMediaByCategory.length;
+            this.selectedCategory = '';
           } 
+        },
+          // Get posts from axios backend
+        //     getPosts () {
+        //         let params = {}
+        //         if(this.category != '') {
+        //             params.category = this.category
+        //         }
+        //         window.axios.get('/api/posts', {params})
+        //             .then(response => {
+        //                 this.posts = response.data.data
+        //                 this.calculateImageCount()
+        //             })
+        //     }
+        calculateImageCount () {
+            for (let i = 0; i < this.filterMediaByCategory.length; i++) {
+                    this.imageCounter++;
+            }
+        },
+
+        rendered () {
+            // Img onload
+            this.imagesCount++
+            
+        },
+
+        resizeAllMasonryItems () {
+            // Get all item class objects in one list
+            let allItems = document.getElementsByClassName('card');
+
+            /*
+            * Loop through the above list and execute the spanning function to
+            * each list-item (i.e. each masonry item)
+            */
+            for (let i = 0; i < allItems.length; i++) {
+                this.resizeMasonryItem(allItems[i]);
+            }
+        }, 
+    
+        resizeMasonryItem (item) {
+            /* Get the grid object, its row-gap, and the size of its implicit rows */
+            let grid = document.getElementsByClassName('masonry')[0],
+                rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap')),
+                rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+
+            /*
+            * Spanning for any brick = S
+            * Grid's row-gap = G
+            * Size of grid's implicitly create row-track = R
+            * Height of item content = H
+            * Net height of the implicit row-track = T = G + R
+            * S = H1 / T
+            */
+
+            let rowSpan = Math.ceil((item.querySelector('.card-content').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+
+            /* Set the spanning as calculated above (S) */
+            item.style.gridRowEnd = 'span ' + rowSpan;
+        },
       },
-      filterMediaByCategory: function() {
-        this.imageCounter = this.filterMediaByCategory.length;
+
+      watch: {
+        imagesCount: function () {
+          if(this.imagesCount == this.imageCounter){
+                this.resizeAllMasonryItems();
+            } 
+        },
+        filterMediaByCategory: function() {
+          this.imageCounter = this.filterMediaByCategory.length;
+        },
       },
+      
+      components: {
+          LightBox,
+        },
+
   }
-}
 </script>
 
 
@@ -237,6 +243,7 @@ export default {
 
     /* Animations */
 .animate {
+  animation-name: stretch;
   animation-name: stretch;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;

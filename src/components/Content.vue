@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-lg bg-amber-700 shadow-inner overflow-y-scroll z-5">
+  <div class="container max-w-screen-2xl bg-amber-700 shadow-inner overflow-y-scroll z-5">
       <keep-alive>
             <component :is="currentView.tag" :data="currentView.data"></component>
       </keep-alive>

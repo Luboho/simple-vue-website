@@ -6,7 +6,9 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSocialSharing from 'vue-social-sharing'
 import VueLazyLoad from 'vue-lazyload'
-import {VueMasonryPlugin} from 'vue-masonry';
+import JwPagination from 'jw-vue-pagination';
+
+
 // use library
 library.add(fas)
 // Reg. component
@@ -18,7 +20,8 @@ Vue.use(VueSocialSharing);
 
 Vue.use(VueLazyLoad)
 
-Vue.use(VueMasonryPlugin)
+Vue.component('jw-pagination', JwPagination);
+
 
 
 new Vue({
