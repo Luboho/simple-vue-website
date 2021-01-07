@@ -8,7 +8,6 @@ import VueSocialSharing from 'vue-social-sharing'
 import VueLazyLoad from 'vue-lazyload'
 import JwPagination from 'jw-vue-pagination';
 
-
 // use library
 library.add(fas)
 // Reg. component

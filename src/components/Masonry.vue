@@ -16,7 +16,7 @@
 
         <LightBox
           ref="lightbox"
-          :media="media"
+          :media="pageOfItems"
           :show-caption="false"
           :show-light-box="false"
         /> 
@@ -48,31 +48,73 @@
   </div>
 <!-- End of Category filter -->
 
+<!-- Spinner -->
+  <div id="spinner" class="text-center h-screen" v-if="spinner">
+      <img src="@/assets/default/loading.gif" class="mx-auto mt-28" alt="">
+  </div>
+
+<!-- End of Spinner -->
+
 <!-- Masonry Gallery used for "brick wall" layout -->
-        <div  v-if="filterMediaByCategory.length > 0" class="masonry"  v-lazy="filterMediaByCategory.src">
-        <div v-for="(post, index) in filterMediaByCategory" :key="index" class="card" >
-            <div class="card-content animate" v-lazy="post.url || post.thumb" @click="openGallery(index)">
-                <div v-if="post != ''">
-                    <img :src="post.src" class="card-img" @load="rendered">
-                </div>
-                <div  class="card-caption">
-                  <h1 class="font-bold text-sm">{{ post.title }}</h1>
-                  <h3>{{ post.caption }}</h3>
-                    <!-- <p class="font-12">Posted on {{ post.published_at }}</p> -->
-                </div>
-                <div class="flex bg-gray-200 justify-between">
-                    <p class="text-sm ml-2 text-lime-600"># {{ post.category }}</p>
-                    <p class="text-gray-700 text-sm mr-2">{{ post.price}}</p>
-                </div>
-            </div>
-        </div>
+  <div v-else>
+    <div  v-if="pageOfItems.length > 0" class="masonry"  v-lazy="pageOfItems.src">
+      <div v-for="(post, index) in pageOfItems" :key="index" class="card" >
+          <div class="card-content animate" v-lazy="post.url || post.thumb" @click="openGallery(index)">
+              <div v-if="post != ''">
+                  <img :src="post.src" class="card-img" @load="rendered">
+              </div>
+              <div  class="card-caption">
+                <h1 class="font-bold text-sm">{{ post.title }}</h1>
+                <h3>{{ post.caption }}</h3>
+                  <!-- <p class="font-12">Posted on {{ post.published_at }}</p> -->
+              </div>
+              <div class="flex bg-gray-200 justify-between">
+                  <p class="text-sm ml-2 text-lime-600"># {{ post.category }}</p>
+                  <p class="text-gray-700 text-sm mr-2">{{ post.price}}</p>
+              </div>
+          </div>
+      </div>
     </div>
 <!-- End of Masonry Gallery -->
+    <div class="text-center card-footer pb-0 pt-3">
+      <jw-pagination :items="filterMediaByCategory" 
+                    @changePage="onChangePage" 
+                    :pageSize="12"
+                    :styles="customStyles"
+                    :labels="customLabels">
+      </jw-pagination>
+    </div>
+
+  </div>
+
 </div>
 </template>
 
 <script>
   import LightBox from 'vue-image-lightbox';
+
+  const customLabels = {
+    first: '<<',
+    last: '>>',
+    previous: '<',
+    next: '>'
+  };
+
+  const customStyles = {
+    ul: {
+        fontWeight: 'bold',
+    },
+    li: {
+        borderRadius: '5px',
+        display: 'inline-block',
+        margin: '1px',
+
+    },
+    a: {
+        color: '#F7FEE7',
+        textShadow: '1px 1px 1px gray',
+    }
+  };
 
   export default {
       name: "Masonry",
@@ -82,6 +124,11 @@
         categories: [],
         imageCounter: 0,
         imagesCount: 0,
+        customLabels,
+        customStyles,
+        pageOfItems: [],
+        spinner: false,
+        isActive: false
       }),
       created () {
           this.calculateImageCount();
@@ -101,6 +148,13 @@
         },
       },
       methods: {
+
+        onChangePage(pageOfItems) {
+            // update page of items
+            this.resetCounters();
+            this.pageOfItems = pageOfItems;
+            this.resizeAllMasonryItems();
+        },
         openGallery(index) {
             this.$refs.lightbox.showImage(index)
         },
@@ -108,7 +162,7 @@
         addRemainingImagesCount() {
           let firstCategory = this.categories[0];
           if(this.selectedCategory == firstCategory) {
-            this.imagesCount += this.filterMediaByCategory.length;
+            this.imagesCount += this.pageOfItems.length;
           }
         },
 
@@ -120,7 +174,7 @@
           });
           this.categories = allObjCategories.filter((category, index) => allObjCategories.indexOf(category) === index);
         },
-
+        
         resetCounters() {
               // Refresh Variable for watcher
               this.imageCounter = 0;
@@ -128,12 +182,22 @@
         },
   
         cancelFilter() {
-          if (this.selectedCategory !== ''){
+            this.spinner = true;
+          if (this.selectedCategory == ''){
+              this.spinner = false;
             this.resetCounters();
+            this.imageCounter = this.pageOfItems.length;
             this.addRemainingImagesCount();
-            // let recentFiltratedImages = this.filterMediaByCategory.length;
-            this.selectedCategory = '';
-          } 
+            this.resizeAllMasonryItems();
+          } else {
+              setTimeout(() => {
+                this.spinner = false;
+              }, 1000);
+                this.resetCounters();
+                this.addRemainingImagesCount();
+                this.selectedCategory = '';
+                this.resizeAllMasonryItems();
+          }
         },
           // Get posts from axios backend
         //     getPosts () {
@@ -148,7 +212,7 @@
         //             })
         //     }
         calculateImageCount () {
-            for (let i = 0; i < this.filterMediaByCategory.length; i++) {
+            for (let i = 0; i < this.pageOfItems.length; i++) {
                     this.imageCounter++;
             }
         },
@@ -156,7 +220,6 @@
         rendered () {
             // Img onload
             this.imagesCount++
-            
         },
 
         resizeAllMasonryItems () {
@@ -199,10 +262,17 @@
           if(this.imagesCount == this.imageCounter){
                 this.resizeAllMasonryItems();
             } 
+          this.isActive = true;
         },
-        filterMediaByCategory: function() {
-          this.imageCounter = this.filterMediaByCategory.length;
+        pageOfItems: function() {
+          this.imageCounter = this.pageOfItems.length;
         },
+        //Pagination active class
+        isActive: function() {
+          let current = document.querySelector(".page-item.active");
+          current.classList.add("current");
+          this.isActive = false;
+        }
       },
       
       components: {
@@ -303,9 +373,12 @@ input[type="radio"]:checked + label{
     transform: translate(0, 2px);
     transition: 0.3s;
     background-color: #057017;
-
-
 }
+/* Pagination */
+.current {
+  background-color:#0c7b1f !important;
+}
+/* End Pagination */
 </style>
 
 <style src='vue-image-lightbox/dist/vue-image-lightbox.min.css'  >
