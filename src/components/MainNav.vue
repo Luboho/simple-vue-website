@@ -1,31 +1,31 @@
 <template>
-  <div class="bg-lime-300 px-3 py-1 shadow-2xl">
+  <div class="bg-lime-800 bg-image px-3 py-1 shadow-2xl">
 <!-- Menu Dropdown Media < 768px-->
     <div v-if="dropDown" class="flex justify-between">    
         <!-- Icon, Home, Header -->
         <!--Burger Button -->
         <div class="w-screen flex justify-between">
-            <p class="ml-12 my-auto text-5xl transform duration-1000 hover:rotate-90 rounded text-lime-600 font-bold hover:font-black focus:color-red-500 hover:text-lime-900 cursor-pointer" @click="openNav">&#9776;</p>
+            <p class="ml-12 my-auto text-5xl transform duration-1000 hover:transform hover:scale-150 rounded text-lime-200 font-bold hover:font-black focus:color-red-500 hover:text-lime-900 cursor-pointer" @click="openNav">&#9776;</p>
 
             <div class="mr-20">
               <a href=""  @click.prevent="navigate('home', 'Domov')">
                 <img src="@/assets/pics/flower_logo.png" class="mx-auto" />
-                <h1 class="text-xl text-center font-bold whitespace-nowrap text-lime-900">Flores s.r.o.</h1>
+                <h1 class="text-xl text-center font-bold whitespace-nowrap text-lime-300">Flores s.r.o.</h1>
               </a>
             </div>
         </div>
         
         <div id="mySidenav" class="sidenav mx-auto flex-col">
           <!-- Close Menu Button -->
-          <a href="javascript:void(0)" class="closebtn" @click="closeNav">&times;</a>
+          <a href="javascript:void(0)" class="text-lime-200 hover:text-lime-400 closebtn" @click="closeNav">&times;</a>
               <!-- End Close Menu Button -->
               <a href="" class="flex flex-col align-self-center mr-5" @click.prevent="navigate('home', 'Domov')">
                 <img src="@/assets/pics/flower_logo.png" class="mx-auto" />
-                <h1 class=" text-center font-bold whitespace-nowrap text-lime-900 text-xl">Flores s.r.o.</h1>
+                <h1 class=" text-center font-bold whitespace-nowrap text-lime-300 text-xl">Flores s.r.o.</h1>
               </a>
                <ul class="text-lime-200">
 
-                <li class="p-1 mx-auto text-lime-700 hover:text-lime-400 hover:shadow-lg" :class="{ active: activeView == 'home' }">
+                <li class="p-1 mx-auto text-lime-200 hover:text-lime-400 hover:shadow-lg" :class="{ active: activeView == 'home' }">
                   <a href=""  @click.prevent="navigate('home', 'Domov')">
                     <div class="mx-8 sm:text-left">
                         <font-awesome-icon :icon="['fas', 'home']" />
@@ -33,7 +33,7 @@
                     </div>
                   </a>
                 </li>
-                <li  class="p-1 mx-auto text-lime-700 hover:text-lime-400 hover:shadow-lg" :class="{ active: activeView == 'services' }">
+                <li  class="p-1 mx-auto text-lime-200 hover:text-lime-400 hover:shadow-lg" :class="{ active: activeView == 'services' }">
                   <a href="" @click.prevent="navigate('services', 'Služby')">
                     <div class="mx-8 sm:text-left">
                         <font-awesome-icon :icon="['fas', 'truck-monster']" />
@@ -41,7 +41,7 @@
                     </div>
                   </a>
                 </li>
-                <li  class="p-1 mx-auto text-lime-700 hover:text-lime-400 hover:shadow-lg" :class="{ active: activeView == 'rental' }">
+                <li  class="p-1 mx-auto text-lime-200 hover:text-lime-400 hover:shadow-lg" :class="{ active: activeView == 'rental' }">
                   <a href="" @click.prevent="navigate('rental', 'Požičovňa')">
                     <div class="mx-8 sm:text-left">
                         <font-awesome-icon :icon="['fas', 'tools']" />
@@ -49,7 +49,7 @@
                     </div>
                   </a>
                 </li>
-                <li class="p-1 mx-auto text-lime-700 hover:text-lime-400 hover:shadow-lg " :class="{ active: activeView == 'aboutUs' }">
+                <li class="p-1 mx-auto text-lime-200 hover:text-lime-400 hover:shadow-lg " :class="{ active: activeView == 'aboutUs' }">
                   <a href="" @click.prevent="navigate('aboutUs', 'O nás')">
                     <div class="mx-8 sm:text-left">
                         <font-awesome-icon :icon="['fas', 'users']" />
@@ -57,7 +57,7 @@
                     </div>
                   </a>
                 </li>
-                <li class="p-1 mx-auto text-lime-700 hover:text-lime-400 hover:shadow-lg align-baseline" :class="{ active: activeView == 'contact' }">
+                <li class="p-1 mx-auto text-lime-200 hover:text-lime-400 hover:shadow-lg align-baseline" :class="{ active: activeView == 'contact' }">
                   <a href="" @click.prevent="navigate('contact', 'Kontakt')">
                     <div class="mx-8 sm:text-left">
                       <font-awesome-icon :icon="['fas', 'address-card']" />
@@ -80,11 +80,11 @@
         <div>
           <a href="" class="flex flex-col align-self-center mr-12" @click.prevent="navigate('home', 'Domov')">
             <img src="@/assets/pics/flower_logo.png" class="mx-auto" />
-            <h1 class=" text-center font-bold whitespace-nowrap text-lime-900 text-xl">Flores s.r.o.</h1>
+            <h1 class=" text-center font-bold whitespace-nowrap text-lime-300 text-xl">Flores s.r.o.</h1>
           </a>
         </div>
       </li>
-      <li class="text-lime-600 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg" :class="{ active: activeView == 'home' }">
+      <li class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg" :class="{ active: activeView == 'home' }">
         <a href=""  @click.prevent="navigate('home', 'Domov')">
           <div class="md:text-center lg:text-left">
             <font-awesome-icon :icon="['fas', 'home']" />
@@ -92,7 +92,7 @@
           </div>
         </a>
       </li>
-      <li  class="text-lime-600 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg" :class="{ active: activeView == 'services' }">
+      <li  class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg" :class="{ active: activeView == 'services' }">
         <a href="" @click.prevent="navigate('services', 'Služby')">
           <div class="md:text-center lg:text-left">
             <font-awesome-icon :icon="['fas', 'truck-monster']" />
@@ -100,7 +100,7 @@
           </div>
         </a>
       </li>
-      <li  class="text-lime-600 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg" :class="{ active: activeView == 'rental' }">
+      <li  class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg" :class="{ active: activeView == 'rental' }">
         <a href="" @click.prevent="navigate('rental', 'Požičovňa')">
           <div class="md:text-center lg:text-left">
             <font-awesome-icon :icon="['fas', 'tools']" />
@@ -108,7 +108,7 @@
           </div>
         </a>
       </li>
-      <li class="text-lime-600 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg " :class="{ active: activeView == 'aboutUs' }">
+      <li class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg " :class="{ active: activeView == 'aboutUs' }">
         <a href="" @click.prevent="navigate('aboutUs', 'O nás')">
           <div class="md:text-center lg:text-left">
             <font-awesome-icon :icon="['fas', 'users']" />
@@ -116,7 +116,7 @@
           </div>
         </a>
       </li>
-      <li class="text-lime-600 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg align-baseline" :class="{ active: activeView == 'contact' }">
+      <li class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg align-baseline" :class="{ active: activeView == 'contact' }">
         <a href="" @click.prevent="navigate('contact', 'Kontakt')">
           <div class="md:text-center lg:text-left">
             <font-awesome-icon :icon="['fas', 'address-card']" />
@@ -174,12 +174,16 @@ export default {
         this.closeNav();
     },
     openNav() {
-      document.getElementById("mySidenav").style.width = "180px";
-      this.modal = true;
+      if(this.dropDown === true){
+        document.getElementById("mySidenav").style.width = "180px";
+        this.modal = true;
+      }
     },
     closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      this.modal = false;
+      if(this.dropDown === true) {
+        document.getElementById("mySidenav").style.width = "0";
+        this.modal = false;
+      }
     },
     isModal() {
       this.modal = !this.modal;
@@ -192,7 +196,7 @@ export default {
 
 <style scoped> 
   .active>a {
-    color: #111111;
+    color: #e17b1c;
     cursor: not-allowed;
   }
 
@@ -213,10 +217,11 @@ export default {
   z-index: 100;
   top: 0;
   left: 0;
-  background-color: #84CC16;
+  background-color: #4D7C0F;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 30px;
+  background-image: url('~@/assets/default/drops.png')
 }
 
 .sidenav a {
@@ -237,6 +242,9 @@ export default {
   right: 25px;
   font-size: 50px;
   margin-left: 50px;
+}
+.bg-image {
+  background-image: url('~@/assets/default/drops.png');
 }
 
 </style>

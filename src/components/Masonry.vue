@@ -23,7 +23,7 @@
 <!-- End of LightBox Image -->
 
 <!-- Category filter -->
-  <div class="flex flex-col text-gray-300 p-2 bg-gray-600 w-full">
+  <div class="flex flex-col bg-gray-600 bg-opacity-50 text-gray-300 p-2 w-full">
       <div class="flex mb-2">
         <font-awesome-icon class="text-2xl mt-1 mr-2 align-bottom" :icon="['fas', 'filter']" ></font-awesome-icon>
         <div @click="cancelFilter" class="filter-button w-24 text-gray-200" :class="{ cancelFilter : selectedCategory != '' }">
@@ -76,7 +76,7 @@
       </div>
     </div>
 <!-- End of Masonry Gallery -->
-    <div class="text-center card-footer pb-0 pt-3">
+    <div class="text-center card-footer pb-0 pt-5">
       <jw-pagination :items="filterMediaByCategory" 
                     @changePage="onChangePage" 
                     :pageSize="12"
@@ -131,15 +131,15 @@
         isActive: false
       }),
       created () {
-          this.calculateImageCount();
-
           let masonryEvents = ['load', 'resize', 'change'];
           let vm = this
               masonryEvents.forEach(function (event) {
-                  window.addEventListener(event, vm.resizeAllMasonryItems);
+              window.addEventListener(event, vm.resizeAllMasonryItems);
               });
         // Filter Existing Categories
-        this.findCategories();
+          this.findCategories();
+          this.calculateImageCount();
+          this.resizeAllMasonryItems();
       },
       
       computed: {
@@ -342,12 +342,12 @@ input[type="radio"] + label:hover span{
 } 
 
 input[type="radio"]:checked + label span {
-  background-color: #1F9D55; 
+  background-color: #3ab344; 
   box-shadow: 0px 0px 0px 2px white inset;
 }
 
 input[type="radio"]:checked + label{
-   color: #1F9D55; 
+   color: #3ab344; 
 }
 
 .cancelFilter {
@@ -376,7 +376,7 @@ input[type="radio"]:checked + label{
 }
 /* Pagination */
 .current {
-  background-color:#0c7b1f !important;
+  background-color:#365314 !important;
 }
 /* End Pagination */
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full text-gray-200 text-sm bg-gray-700">
+  <div class="w-full h-auto text-gray-200 text-sm bg-gray-700">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-2 xs:justify-items-center">
             <div class="p-10 mt-10  bg-opacity-50">
                 <h1 class="font-bold">Flores s.r.o.</h1>

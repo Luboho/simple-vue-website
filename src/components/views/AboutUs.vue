@@ -1,6 +1,6 @@
 <template>
 <div class="pt-18 pb-48">
-  <h1 class="text-bg text-3xl shadow-xl p-6 text-gray-300">Niečo málo o nás.</h1>
+  <h1 class="text-bg text-3xl pt-10 px-10 text-gray-200">Niečo málo o nás.</h1>
       <Posts :posts="filteredPosts" />
 </div>
 </template>

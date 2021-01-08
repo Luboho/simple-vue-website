@@ -1,8 +1,8 @@
 <template>
-  <div class="">
+  <div>
     <!-- Header -->
     <!-- Slider Horizontal Gallery -->
-    <div class=" shadow-xl">
+    <div>
         <div>
           
           <vue-flux
@@ -35,7 +35,7 @@
     </div>
 
 <!-- Posts -->
-<div class="text-bg">
+<div class="pt-10">
   <Posts :posts="filteredPosts" />
 
 </div>
@@ -57,6 +57,8 @@
 
   export default {
     name: "Home",
+
+    props: ["currentView"],
 
     data: () => ({
       vfOptions: {
@@ -82,6 +84,8 @@
         });
       },
     },
+
+    
 
     components: {
       VueFlux,
