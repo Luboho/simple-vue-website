@@ -2,14 +2,14 @@
     <div class="text-gray-200 w-full xs:pb-20 sm:pt-32 md:pb-48 lg:pb-48 contact-bg">
         <div class="pb-72 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-2 xs:justify-items-center">
             <div class="p-10 mt-10 bg-gray-700 bg-opacity-50">
-                <h1 class="font-bold">Flores s.r.o.</h1>
+                <h1 class="pb-2 font-bold text-xl">Flores s.r.o.</h1>
                 <p class="whitespace-nowrap">Ulica P.J.Šafárika 143/34</p>
                 <p class="whitespace-nowrap">Banská Bystrica</p>
                 <p class="whitespace-nowrap">457 87</p>     
             </div>
   
             <div class="p-10 mt-10 bg-gray-700 bg-opacity-50">
-                <h2 class="font-bold">Otváracie hodiny:</h2>
+                <h2 class="pb-2 font-bold text-xl">Otváracie hodiny:</h2>
                 <div class="flex">
                     <div class="">
                         <p>Pondelok:</p> 
@@ -33,17 +33,23 @@
             </div>
 
             <div class="p-10 mt-10 bg-gray-700 bg-opacity-50">
-                <h2 class="font-bold">Kontaktné údaje:</h2>
+                <h2 class="pb-2 font-bold text-xl">Kontaktné údaje:</h2>
                 <div class="flex">
                     <div class="">
-                        <p>Pevná linka:</p> 
-                        <p>Mobil: </p>
-                        <p>Email: </p>
+                        <p><font-awesome-icon :icon="['fas', 'phone-alt']" /></p> 
+                        <p><font-awesome-icon :icon="['fas', 'mobile-alt']" /></p>
+                        <p><font-awesome-icon :icon="['fas', 'envelope']" /></p>
                     </div>
                     <div>
-                        <p class="whitespace-nowrap text-right  ml-2"> 02/231 34 45</p>
-                        <p class="whitespace-nowrap text-right  ml-2"> +421 903 125 678</p>
-                        <p class="whitespace-nowrap text-right  ml-2"> flores@gmail.com</p>
+                        <p class="whitespace-nowrap text-right  ml-2">
+                            <a href="tel:022313445" > 02/231 34 45</a>
+                        </p>
+                        <p class="whitespace-nowrap text-right  ml-2">
+                            <a href="tel:+421903125678"> +421 903 125 678</a>
+                        </p>
+                        <p class="whitespace-nowrap text-right  ml-2">
+                            <a href="mailto:flores@gmail.com"> flores@gmail.com</a>
+                        </p>
                         <p class="ml-12 mt-5">
                             <ShareNetwork
                                 network="facebook"

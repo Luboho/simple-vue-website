@@ -1,7 +1,8 @@
 <template>
   <div class="container bg-image max-w-screen-2xl  shadow-inner overflow-y-scroll z-5">
       <keep-alive>
-            <component :is="currentView.tag" :data="currentView.data" :currentView="currentView"></component>
+            <component :is="currentView.tag" :data="currentView.data" :currentView="currentView">
+            </component>
       </keep-alive>
       <Footer />
   </div>

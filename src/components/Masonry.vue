@@ -1,5 +1,5 @@
 <template>
-<div class="masonry-wrapper-height">
+<div>
 <!-- LightBox Image Preview -->
       <!-- <p>{{ paragraphs[0] }}</p>
       <p>{{ paragraphs[1] }}</p> -->
@@ -131,15 +131,15 @@
         isActive: false
       }),
       created () {
-          let masonryEvents = ['load', 'resize', 'change'];
+          let masonryEvents = ['load', 'resize'];
           let vm = this
               masonryEvents.forEach(function (event) {
               window.addEventListener(event, vm.resizeAllMasonryItems);
               });
         // Filter Existing Categories
-          this.findCategories();
           this.calculateImageCount();
           this.resizeAllMasonryItems();
+          this.findCategories();
       },
       
       computed: {
@@ -156,6 +156,7 @@
             this.resizeAllMasonryItems();
         },
         openGallery(index) {
+            // Preview Image
             this.$refs.lightbox.showImage(index)
         },
 
@@ -182,22 +183,28 @@
         },
   
         cancelFilter() {
-            this.spinner = true;
-          if (this.selectedCategory == ''){
-              this.spinner = false;
-            this.resetCounters();
-            this.imageCounter = this.pageOfItems.length;
-            this.addRemainingImagesCount();
-            this.resizeAllMasonryItems();
-          } else {
-              setTimeout(() => {
-                this.spinner = false;
-              }, 1000);
-                this.resetCounters();
-                this.addRemainingImagesCount();
-                this.selectedCategory = '';
-                this.resizeAllMasonryItems();
-          }
+          this.callSpinner();
+          this.resetCounters();
+          this.addRemainingImagesCount();
+          this.selectedCategory = '';
+          this.imageCounter = this.pageOfItems.length;
+          this.resizeAllMasonryItems();
+          //   this.spinner = true;
+          // if (this.selectedCategory == ''){
+          //     this.spinner = false;
+          //   this.resetCounters();
+          //   this.imageCounter = this.pageOfItems.length;
+          //   this.addRemainingImagesCount();
+          //   this.resizeAllMasonryItems();
+          // } else {
+          //     setTimeout(() => {
+          //       this.spinner = false;
+          //     }, 1000);
+          //       this.resetCounters();
+          //       this.addRemainingImagesCount();
+          //       this.selectedCategory = '';
+          //       this.resizeAllMasonryItems();
+          // }
         },
           // Get posts from axios backend
         //     getPosts () {
@@ -255,9 +262,17 @@
             /* Set the spanning as calculated above (S) */
             item.style.gridRowEnd = 'span ' + rowSpan;
         },
+
+        callSpinner() {
+          this.spinner = true;
+          setTimeout(() => {
+            this.spinner = false;
+          }, 1000);
+        }
       },
 
       watch: {
+       
         imagesCount: function () {
           if(this.imagesCount == this.imageCounter){
                 this.resizeAllMasonryItems();

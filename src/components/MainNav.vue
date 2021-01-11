@@ -5,7 +5,21 @@
         <!-- Icon, Home, Header -->
         <!--Burger Button -->
         <div class="w-screen flex justify-between">
-            <p class="ml-12 my-auto text-5xl transform duration-1000 hover:transform hover:scale-150 rounded text-lime-200 font-bold hover:font-black focus:color-red-500 hover:text-lime-900 cursor-pointer" @click="openNav">&#9776;</p>
+          <div class="flex">
+            <div class="flex-col text-xs font-bold align-middle my-auto ml-12 mr-2 text-lime-900">
+              <p>M</p>
+              <p>E</p>
+              <p>N</p>
+              <p>U</p>
+            </div>
+            <p class="my-auto text-5xl transform duration-1000 hover:transform hover:scale-150 rounded text-lime-200 font-bold hover:font-black focus:color-red-500 hover:text-lime-400 cursor-pointer" @click="openNav">&#9776;</p>
+            <div class="flex-col text-xs font-bold align-middle my-auto ml-2 text-lime-900">
+              <p>M</p>
+              <p>E</p>
+              <p>N</p>
+              <p>U</p>
+            </div>
+          </div>
 
             <div class="mr-20">
               <a href=""  @click.prevent="navigate('home', 'Domov')">
@@ -73,18 +87,18 @@
 
   <div v-else>
 <!-- Larger than small screen Menu -->
-    <ul class="lg:block md:flex md:justify-between px-3">
+    <ul class="lg:block md:flex md:justify-between pl-8">
 
       <li class="text-lime-500 animate-pulse lg:pb-4 border-lime-500 lg:border-b">
         <!-- Icon, Home, Header -->
-        <div>
+        <div class="pl-3">
           <a href="" class="flex flex-col align-self-center mr-12" @click.prevent="navigate('home', 'Domov')">
             <img src="@/assets/pics/flower_logo.png" class="mx-auto" />
             <h1 class=" text-center font-bold whitespace-nowrap text-lime-300 text-xl">Flores s.r.o.</h1>
           </a>
         </div>
       </li>
-      <li class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg" :class="{ active: activeView == 'home' }">
+      <li class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-400 hover:shadow-lg" :class="{ active: activeView == 'home' }">
         <a href=""  @click.prevent="navigate('home', 'Domov')">
           <div class="md:text-center lg:text-left">
             <font-awesome-icon :icon="['fas', 'home']" />
@@ -92,7 +106,7 @@
           </div>
         </a>
       </li>
-      <li  class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg" :class="{ active: activeView == 'services' }">
+      <li  class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-400 hover:shadow-lg" :class="{ active: activeView == 'services' }">
         <a href="" @click.prevent="navigate('services', 'Služby')">
           <div class="md:text-center lg:text-left">
             <font-awesome-icon :icon="['fas', 'truck-monster']" />
@@ -100,7 +114,7 @@
           </div>
         </a>
       </li>
-      <li  class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg" :class="{ active: activeView == 'rental' }">
+      <li  class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-400 hover:shadow-lg" :class="{ active: activeView == 'rental' }">
         <a href="" @click.prevent="navigate('rental', 'Požičovňa')">
           <div class="md:text-center lg:text-left">
             <font-awesome-icon :icon="['fas', 'tools']" />
@@ -108,7 +122,7 @@
           </div>
         </a>
       </li>
-      <li class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg " :class="{ active: activeView == 'aboutUs' }">
+      <li class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-400 hover:shadow-lg " :class="{ active: activeView == 'aboutUs' }">
         <a href="" @click.prevent="navigate('aboutUs', 'O nás')">
           <div class="md:text-center lg:text-left">
             <font-awesome-icon :icon="['fas', 'users']" />
@@ -116,7 +130,7 @@
           </div>
         </a>
       </li>
-      <li class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-900 hover:shadow-lg align-baseline" :class="{ active: activeView == 'contact' }">
+      <li class="text-lime-200 font-semibold p-2 px-3  md:self-center rounded-xl hover:text-lime-400 hover:shadow-lg align-baseline" :class="{ active: activeView == 'contact' }">
         <a href="" @click.prevent="navigate('contact', 'Kontakt')">
           <div class="md:text-center lg:text-left">
             <font-awesome-icon :icon="['fas', 'address-card']" />
