@@ -57,7 +57,7 @@
 
 <!-- Masonry Gallery used for "brick wall" layout -->
   <div v-else>
-    <div  v-if="pageOfItems.length > 0" class="masonry"  v-lazy="pageOfItems.src">
+    <div  v-if="pageOfItems.length > 0" class="masonry "  v-lazy="pageOfItems.src">
       <div v-for="(post, index) in pageOfItems" :key="index" class="card" >
           <div class="card-content animate" v-lazy="post.url || post.thumb" @click="openGallery(index)">
               <div v-if="post != ''">
@@ -118,7 +118,7 @@
 
   export default {
       name: "Masonry",
-      props: ["media"],
+      props: ["media", "currentView"],
       data: () => ({
         selectedCategory: '',
         categories: [],
@@ -131,15 +131,15 @@
         isActive: false
       }),
       created () {
-          let masonryEvents = ['load', 'resize'];
+        let masonryEvents = ['load', 'resize'];
           let vm = this
               masonryEvents.forEach(function (event) {
-              window.addEventListener(event, vm.resizeAllMasonryItems);
+                window.addEventListener(event, vm.resizeAllMasonryItems);
               });
         // Filter Existing Categories
-          this.calculateImageCount();
-          this.resizeAllMasonryItems();
-          this.findCategories();
+                vm.findCategories();
+          // vm.calculateImageCount();
+          // vm.resizeAllMasonryItems();
       },
       
       computed: {
@@ -189,35 +189,7 @@
           this.selectedCategory = '';
           this.imageCounter = this.pageOfItems.length;
           this.resizeAllMasonryItems();
-          //   this.spinner = true;
-          // if (this.selectedCategory == ''){
-          //     this.spinner = false;
-          //   this.resetCounters();
-          //   this.imageCounter = this.pageOfItems.length;
-          //   this.addRemainingImagesCount();
-          //   this.resizeAllMasonryItems();
-          // } else {
-          //     setTimeout(() => {
-          //       this.spinner = false;
-          //     }, 1000);
-          //       this.resetCounters();
-          //       this.addRemainingImagesCount();
-          //       this.selectedCategory = '';
-          //       this.resizeAllMasonryItems();
-          // }
         },
-          // Get posts from axios backend
-        //     getPosts () {
-        //         let params = {}
-        //         if(this.category != '') {
-        //             params.category = this.category
-        //         }
-        //         window.axios.get('/api/posts', {params})
-        //             .then(response => {
-        //                 this.posts = response.data.data
-        //                 this.calculateImageCount()
-        //             })
-        //     }
         calculateImageCount () {
             for (let i = 0; i < this.pageOfItems.length; i++) {
                     this.imageCounter++;
