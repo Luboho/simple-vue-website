@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
@@ -16,10 +17,12 @@
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "autoprefixer": "^9.8.6",
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
     "jw-vue-pagination": "^1.0.3",
     "masonry-layout": "^4.2.2",
     "nuxt": "^2.14.12",
     "postcss": "^7.0.35",
+    "serve-static": "^1.14.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "vue": "^2.6.11",
     "vue-flux": "^6.3.1",
