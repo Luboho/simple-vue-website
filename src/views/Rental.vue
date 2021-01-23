@@ -58,7 +58,7 @@
     <!-- LightBox with Modal -->
     <transition name="fade">
      <div v-if="modal" class="absolute">  
-        <div  @click="modal = ! modal" class="fixed min-h-screen flex items-center justify-center bg-opacity-80 bg-gray-900 z-20 top-0 w-screen h-full" v-for="showImage in showImages" :key="showImage.id">
+        <div  @click="modal = ! modal" class="fixed min-h-screen flex items-center justify-center bg-opacity-90 bg-black z-1000 top-0 w-screen h-full" v-for="showImage in showImages" :key="showImage.id">
             <div class="fixed flex justify-center">
                 <img :src="showImage.src" alt="">
                 <a href="#" class="absolute -top-9 -right-5 text-4xl text-white transform hover:scale-105">x</a>
@@ -244,7 +244,6 @@ const options = {
     background-color: #84CC16;
     color: #3F6212;
     transition: all .35s;
-    content: "\55";
     transform: rotateY(-360deg);
     animation-duration: 1s;
     transition: transform .3s ease-in-out;
@@ -255,7 +254,7 @@ const options = {
     color: white;
     text-shadow: 2px 2px 4px red;
     border: 1px solid red;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .ks-cboxtags input[type="checkbox"] {
@@ -298,11 +297,11 @@ const options = {
 }
 /* Category btn */
 .fade-enter-active {
-    animation: showModal .6s;
+    animation: showModal .4s;
 }
 
 .fade-leave-active {
-    animation: showModal .6s reverse;
+    animation: showModal .4s reverse;
 }
 
 /* Load More Images */

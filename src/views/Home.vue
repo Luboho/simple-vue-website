@@ -33,7 +33,7 @@
       </div>
 
 <!-- Posts -->
-<div class="">
+<div>
   <Posts :posts="filteredPosts" />
 </div>
 <!-- End of Posts -->

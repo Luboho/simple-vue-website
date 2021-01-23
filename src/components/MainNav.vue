@@ -81,7 +81,7 @@
                 </li>
               </ul>
         </div>
-    <div v-if="modal" @click="isModal" class="bg-black modal opacity-50 fixed right-0 left-0 top-0 bottom-0 z-200"></div>
+    <div v-if="modal" @click="isModal" class="modal"></div>
   </div>
     <!-- End of Dropdown Menu -->                
 
@@ -204,7 +204,16 @@ export default {
 </script>
 
 <style scoped> 
-
+  .modal {
+    background-color: black;
+    position: fixed;
+    z-index: 90;
+    opacity: 0.7;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
   .active>a {
     color: #e17b1c;
     cursor: auto;

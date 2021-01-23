@@ -1,15 +1,15 @@
 <template>
   <!-- Posts -->          
-  <div class="z-20 pb-10">
+  <div class="relative z-20 pb-10">
       <div v-for="post in posts" :key="post.id">
 
-        <div class="pt-10 px-10 post-bg relative">
+        <div class="pt-10 px-10 post-bg relative z-20">
             <div class="relative z-20 w-full shadow-xl overflow-auto rounded text-gray-900 text-justify p-5">
-              <img :src="post.image" class=" rounded-lg p-3 md:w-6/12 lg:w-8/12 md:float-left lg:float-left">
+              <img :src="post.image" class="relative z-20 rounded-lg p-3 md:w-6/12 lg:w-8/12 md:float-left lg:float-left">
                 <p class="pt-4 lg:text-md font-bold">{{ post.title }}</p>
                 <p class="text-sm">{{ post.text }}</p>
-                <img v-if="bgImage" class="opacity-20 absolute z-10 bottom-0 right-0" 
-                     :src="shuffle(bgImagesArray)" alt="">
+                  <img v-if="bgImage" class="anime" 
+                      :src="shuffle(bgImagesArray)" alt="">
             </div>
         </div>
 
@@ -61,5 +61,12 @@
 <style>
   .post-bg div {
     background-color: rgba(221, 218, 214, 0.85);
+  }
+  .anime {
+    bottom: 5px;
+    right: 5px;
+    position: absolute;
+    z-index: 10;
+    opacity: .2;
   }
 </style>
