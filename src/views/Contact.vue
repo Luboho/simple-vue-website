@@ -75,17 +75,13 @@
 
 <script>
 
-export default {
-
-    
-}
 </script>
 
 <style>
 
-        .contact-bg {
-            background-image: url('~@/assets/pics/contact-bg.jpg');
-            background-repeat: repeat-x;
-        }
+.contact-bg {
+    background-image: url('~@/assets/pics/contact-bg.jpg');
+    background-repeat: repeat-x;
+}
 
 </style>

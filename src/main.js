@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSocialSharing from 'vue-social-sharing'
 import VueLazyLoad from 'vue-lazyload'
 import JwPagination from 'jw-vue-pagination';
+import router from './router'
 
 // use library
 library.add(fas)
@@ -22,7 +23,7 @@ Vue.use(VueLazyLoad)
 Vue.component('jw-pagination', JwPagination);
 
 
-
 new Vue({
-  render: h => h(App),
+  router,
+  render: h => h(App)
 }).$mount('#app')

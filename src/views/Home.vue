@@ -2,7 +2,6 @@
   <div>
     <!-- Header -->
     <!-- Slider Horizontal Gallery -->
-    <div>
         <div>
           
           <vue-flux
@@ -10,7 +9,7 @@
             :images="vfImages"
             :transitions="vfTransitions"
             :captions="vfCaptions"
-            style="height:200px;width:100%;"
+            style="height:200px;width:100%;margin-top: 2px;"
             ref="slider">
 
             <!-- <template v-slot:controls>
@@ -32,12 +31,10 @@
           </vue-flux>
 <!-- End of Slider Horizontal Gallery -->
       </div>
-    </div>
 
 <!-- Posts -->
-<div class="pt-10">
+<div class="">
   <Posts :posts="filteredPosts" />
-
 </div>
 <!-- End of Posts -->
 
@@ -52,13 +49,11 @@
   //  FluxIndex,
   //  FluxPagination,
   } from 'vue-flux';
-  import posts from '../../data/posts';
-  import Posts from '../Posts';
+  import posts from '../data/posts.js';
+  import Posts from '../components/Posts.vue';
 
   export default {
     name: "Home",
-
-    props: ["currentView"],
 
     data: () => ({
       vfOptions: {

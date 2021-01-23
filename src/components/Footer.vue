@@ -2,14 +2,14 @@
   <div class="w-full h-auto text-gray-200 text-sm bg-gray-700">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-2 xs:justify-items-center">
             <div class="p-10 mt-10  bg-opacity-50">
-                <h1 class="font-bold">Flores s.r.o.</h1>
+                <h1 class="text-xl font-bold">Flores s.r.o.</h1>
                 <p class="whitespace-nowrap">Ulica P.J.Šafárika 143/34</p>
                 <p class="whitespace-nowrap">Banská Bystrica</p>
                 <p class="whitespace-nowrap">457 87</p>     
             </div>
   
             <div class="p-10 mt-10  bg-opacity-50">
-                <h2 class="font-bold">Otváracie hodiny:</h2>
+                <h2 class="text-xl font-bold">Otváracie hodiny:</h2>
                 <div class="flex">
                     <div class="">
                         <p>Pondelok:</p> 
@@ -33,7 +33,7 @@
             </div>
 
             <div class="p-10 mt-10  bg-opacity-50">
-                <h2 class="font-bold">Kontaktné údaje:</h2>
+                <h2 class="text-xl font-bold">Kontaktné údaje:</h2>
                 <div class="flex">
                     <div class="">
                         <p>Pevná linka:</p> 
@@ -65,7 +65,7 @@
             </div>
 
         </div>
-    <p class="p-3 top text-sm text-gray-300 text-center"> © 2020-2021. Floral s.r.o. Všetky práva vyhradené. </p>
+    <p class="p-3 top text-sm text-gray-300 text-center"> © 2020-2021. ZipZap digital. Všetky práva vyhradené. </p>
 
   </div>
 </template>

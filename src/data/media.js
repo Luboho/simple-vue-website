@@ -290,6 +290,16 @@ export const media = [
       caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
     //   srcset: '...' // Optional for displaying responsive images
     },
+    { // For image
+      id: 31,
+      category: 'Náradie',
+      thumb: require('@/assets/rental/tools-7.jpg'),
+      src: require('@/assets/rental/tools-7.jpg'),
+      title: 'Lorem Ipsum Dolor',
+      price: '€' + 0.01,
+      caption: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', // Optional
+    //   srcset: '...' // Optional for displaying responsive images
+    },
     
     
     // { // For video

@@ -1,33 +1,47 @@
 <template>
-  <div class="">
-    <div class="lg:flex md:inline-block sm:inline-block">
+  <div id="app" class="bg-image max-w-screen-3xl  shadow-inner overflow-y-scroll">
       <MainNav />
-      <div class="flex flex-col flex-1 w-screen h-screen overflow-y-hidden">
-        <Content   />
+      <div class="mx-auto max-w-6xl">
+        <router-view></router-view>
       </div>
-    </div>
+      <Footer />
   </div>
 </template>
 
 <script>
-import MainNav from './components/MainNav.vue';
-import Content from './components/Content.vue';
-import "tailwindcss/tailwind.css";
+// import Content from './components/Content.vue'
+// import AboutUs from './views/AboutUs.vue';
+// import Contact from './components/Posts';
+// import Home from './views/Home';
+// import Rental from './views/Rental.vue';
+// import Services from './views/Services.vue';
+import MainNav from './components/MainNav';
+import Footer from './components/Footer';
+// import eventBus from "./eventBus.js";
 
-export default {
-  name: 'App',
-
-  components: {
-    Content: Content,
-    MainNav: MainNav
-  },
-}
+ export default {
+        name: "App",
+        
+        components: {
+        
+           MainNav,
+           Footer,
+        }
+    }
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
- * {
-   font-family: 'Titillium', 'Roboto', 'sans-serif';
- }
+<style>
+.bg-image {
+        background-image: url('~@/assets/default/dots.png');
+        background-repeat: repeat;
+        background-color: #B45309;
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
 </style>
