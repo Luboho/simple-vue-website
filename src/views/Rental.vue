@@ -1,12 +1,11 @@
 <template>
-  <div id="app">
+  <div>
 
 <!-- Category filter -->
-  <div class="bg-gray-600 bg-opacity-25 py-4 w-full">
+  <div class="bg-gray-600 bg-opacity-25 w-screen flex justify-evenly flex-wrap py-4">
       
-      <form class="flex justify-evenly">
         <div v-for="(category, index) in categories" :key="index" class="ks-cboxtags">
-          <div class="flex">
+          <div>
             <input :id="category" 
                 @click="callSpinner"
                  v-model="selectedCategories"
@@ -21,7 +20,6 @@
           </div>
         </div>
 
-      </form>
   </div>
 <!-- End of Category filter -->
 
@@ -189,13 +187,13 @@ const options = {
       text-align: justify;
     }
 
+  /* Category buttons */
 .ks-cboxtags {
     list-style: none;
-    padding: 5px;
+    padding: 2px;
 }
-
 .ks-cboxtags label{
-    display: inline-block;
+    display: block;
     background-color:#ECFCCB;
     color: #8d8d8d;
     font-weight: bold;
@@ -212,13 +210,13 @@ const options = {
 
 .ks-cboxtags label {
     padding: 5px 12px ;
-    font-size: 1em;
+    font-size: .8em;
     cursor: pointer;
     border: 1px solid #BEF264;
 }
 
 .ks-cboxtags label::before {
-    display:inline-block;
+    display:block;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
