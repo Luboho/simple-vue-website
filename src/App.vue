@@ -2,7 +2,7 @@
   <div id="app" class="bg-image max-w-screen-3xl  shadow-inner overflow-y-scroll">
       <MainNav />
       <div class="mx-auto max-w-6xl">
-        <router-view></router-view>
+        <router-view :currentUrl="currentUrl"></router-view>
       </div>
       <Footer />
   </div>
@@ -21,6 +21,12 @@ import Footer from './components/Footer';
 
  export default {
         name: "App",
+
+        computed: {
+            currentUrl() {
+                return window.location.href;
+            }
+        },
         
         components: {
         
