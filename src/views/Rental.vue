@@ -2,7 +2,7 @@
   <div>
 
 <!-- Category filter -->
-  <div class="bg-gray-600 bg-opacity-25 w-screen flex justify-evenly flex-wrap py-4">
+  <div class="bg-gray-600 bg-opacity-25 w-full flex justify-evenly flex-wrap py-4">
       
         <div v-for="(category, index) in categories" :key="index" class="ks-cboxtags">
           <div>
