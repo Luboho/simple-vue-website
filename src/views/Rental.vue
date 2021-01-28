@@ -56,7 +56,7 @@
     <!-- LightBox with Modal -->
     <transition name="fade">
      <div v-if="modal" class="absolute">  
-        <div  @click="modal = ! modal" class="fixed min-h-screen flex items-center justify-center bg-opacity-90 bg-black z-1000 top-0 w-screen h-full" v-for="showImage in showImages" :key="showImage.id">
+        <div  @click="modal = ! modal" class="fixed flex items-center justify-center bg-opacity-90 bg-black z-1000 top-0 left-0 right-0 bottom-0" v-for="showImage in showImages" :key="showImage.id">
             <div class="fixed flex justify-center">
                 <img :src="showImage.src" alt="">
                 <a href="#" class="absolute -top-9 -right-5 text-4xl text-white transform hover:scale-105">x</a>
